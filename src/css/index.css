@@ -1,0 +1,93 @@
+.container {
+  margin: 10px;
+}
+body {
+  font-size: 62.5%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+}
+header .cate {
+  font-size: 2rem;
+}
+header .header-center {
+  width: 30%;
+  text-align: center;
+}
+header .header-center .adress {
+  font-size: 1.1rem;
+}
+header .header-center .date {
+  font-size: 8px;
+}
+#center {
+  display: flex;
+  justify-content: space-between;
+}
+#center .center-left {
+  flex-grow: 1;
+  padding: 0 10%;
+}
+#center .center-left .weather-pic {
+  text-align: center;
+  border-bottom: 2px solid #26da74;
+  padding-top: 80px;
+}
+#center .center-left .weather-pic svg {
+  margin: -10px;
+  font-size: 80px;
+}
+#center .center-left .curret-tmp {
+  font-size: 140px;
+  text-align: center;
+}
+#center .center-left p {
+  font-size: 18px;
+  text-align: center;
+}
+#center aside {
+  flex-basis: 20%;
+  order: 1;
+}
+#center aside ul {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+#center aside ul li {
+  box-sizing: content-box;
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 2px solid #26da74;
+}
+#center aside ul li:last-child {
+  border: 0;
+}
+#center aside ul li svg {
+  font-size: 30px;
+}
+footer ul {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+footer li {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  margin: 5px;
+}
+.clearfix {
+  display: block;
+  content: '';
+  clear: both;
+}
+.selected {
+  background-color: #26da74;
+}
