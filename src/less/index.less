@@ -1,19 +1,65 @@
-@greenBase: #26da74;
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  font-family: Arial;
+}
 
 .container {
   margin: 10px;
 }
 
-body {
-  font-size: 62.5%;
-  height:100vh;
+//分页容器
+#viewport {
+  width: 300%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  overflow: hidden;
+  /*pointer-events: none; 去掉这句话*/
+  transform: translate3d(0, 0, 0);
+  /*backface-visibility: hidden;*/
+  position: relative;
 
-
+  .pageview {
+    flex: 1;
+    width: 0;
+  }
 }
 
+//底部圆点
+.pagenumber {
+  display: flex;
+  position: absolute;
+  bottom: 2em;
+  left: 35%;
+  height: 2em;
+  width: 30%;
+  div {
+    flex: 1;
+    width: 0;
+    position: relative;
+    &:after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 2em;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -0.2em;
+      margin-left: -0.2em;
+    }
+  }
+  .now:after {
+    background: rgba(255, 255, 255, 1) !important;
+  }
+}
+
+//头部
 header {
   display: flex;
   justify-content: space-between;
@@ -30,18 +76,21 @@ header {
       font-size: 8px;
     }
   }
+
 }
 
+//中间位置
 #center {
   display: flex;
   justify-content: space-between;
+  margin-top: 40px;
   .center-left {
     flex-grow: 1;
     padding: 0 10%;
     .weather-pic {
       text-align: center;
-      border-bottom: 2px solid @greenBase;
-      padding-top:80px;
+      border-bottom: 2px solid #26da74;
+      padding-top: 80px;
       svg {
         margin: -10px;
         font-size: 80px;
@@ -66,47 +115,40 @@ header {
       li {
         box-sizing: content-box;
         text-align: center;
-        padding:10px 0;
-        border-bottom: 2px solid @greenBase;
+        padding: 10px 0;
+        border-bottom: 2px solid #26da74;
         &:last-child {
           border: 0;
         }
-
         svg {
           font-size: 30px;
-
         }
       }
     }
+  }
 
+}
+
+@media screen and (max-width: 360px) {
+  html, body {
+    font-size: 15px
   }
 }
 
-footer {
-  ul {
-    display: flex;
-    justify-content: center;
-    padding-bottom:10px;
-  }
-  li {
-    width: 10px;
-    height: 10px;
-    border: 1px solid #000;
-    border-radius: 50%;
-    margin: 5px;
+@media screen and (min-width: 360px) and (max-width: 400px) {
+  html, body {
+    font-size: 16px
   }
 }
 
-.clearfix {
-  display: block;
-  content: '';
-  clear: both;
+@media screen and (min-width: 400px) and (max-width: 460px) {
+  html, body {
+    font-size: 18px
+  }
 }
 
-.selected{
-  background-color: @greenBase;
+@media screen and (min-width: 460px) {
+  html, body {
+    font-size: 24px
+  }
 }
-
-
-
-
